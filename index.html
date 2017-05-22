@@ -1,7 +1,85 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
-</html>
+---
+layout: default
+
+images:
+- full: /images/fulls/01.jpg
+  thumb: /images/thumbs/01.jpg
+  title: Magna feugiat lorem
+  excerpt: Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.
+- full: /images/fulls/02.jpg
+  thumb: /images/thumbs/02.jpg
+  title: Nisl adipiscing
+  excerpt: Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.
+- full: /images/fulls/03.jpg
+  thumb: /images/thumbs/03.jpg
+  title: Tempus aliquam veroeros
+  excerpt: Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.
+- full: /images/fulls/04.jpg
+  thumb: /images/thumbs/04.jpg
+  title: Aliquam ipsum sed dolore
+  excerpt: Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.
+- full: /images/fulls/05.jpg
+  thumb: /images/thumbs/05.jpg
+  title: Cursis aliquam nisl
+  excerpt: Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.
+- full: /images/fulls/06.jpg
+  thumb: /images/thumbs/06.jpg
+  title: Sed consequat phasellus
+  excerpt: Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.
+- full: /images/fulls/07.jpg
+  thumb: /images/thumbs/07.jpg
+  title: Mauris id tellus arcu
+  excerpt: Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.
+- full: /images/fulls/08.jpg
+  thumb: /images/thumbs/08.jpg
+  title: Nunc vehicula id nulla
+  excerpt: Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.
+- full: /images/fulls/09.jpg
+  thumb: /images/thumbs/09.jpg
+  title: Neque et faucibus viverra
+  excerpt: Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.
+- full: /images/fulls/10.jpg
+  thumb: /images/thumbs/10.jpg
+  title: Mattis ante fermentum
+  excerpt: Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.
+- full: /images/fulls/11.jpg
+  thumb: /images/thumbs/11.jpg
+  title: Sed ac elementum arcu
+  excerpt: Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.
+- full: /images/fulls/12.jpg
+  thumb: /images/thumbs/12.jpg
+  title: Vehicula id nulla dignissim
+  excerpt: Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.
+---
+
+{% comment %}
+
+	Multiverse by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+
+	Name:
+
+		Home page
+
+	Description:
+
+		Generates a grid of gallery thumbnails with links to the
+		full-size image. Gallery elements are defined in _data/images.yml.
+
+{% endcomment %}
+
+<!-- Main -->
+	<section id="main">
+
+		{% for image in page.images %}
+
+			<article class="thumb">
+				<a href="{{ site.baseurl }}{{ image.full }}" class="image"><img src="{{ site.baseurl }}{{ image.thumb }}" alt="" /></a>
+				<h2>{{ image.title }}</h2>
+				<p>{{ image.excerpt | remove: "<p>" | remove: "</p>" }}</p>
+			</article>
+
+		{% endfor %}
+
+	</section>
